@@ -53,23 +53,20 @@ rowProduct.addEventListener("click", (e) => {
     const product = e.target.parentElement;
     const title = product.querySelector("p").textContent;
     allProducts = allProducts.filter((product) => product.title !== title);
-    showHTML()
+    showHTML();
   }
 });
-//Funcion para mostrar HTML
 
 function showHTML() {
+  rowProduct.innerHTML = "";
+  let total = 0;
+  let totalOfProducts = 0;
 
-    
-    rowProduct.innerHTML = "";
-    let total = 0;
-    let totalOfProducts = 0;
+  allProducts.forEach((product) => {
+    const containerProduct = document.createElement("div");
+    containerProduct.classList.add("cart-product");
 
-    allProducts.forEach((product) => {
-        const containerProduct = document.createElement("div");
-        containerProduct.classList.add("cart-product");
-
-        containerProduct.innerHTML = `
+    containerProduct.innerHTML = `
     <div class="info-cart-product">
                 <span class="cantidad-producto-carrito">${product.quantity}</span>
                 <p class="titulo-producto-carrito">${product.title}</p>
@@ -90,26 +87,23 @@ function showHTML() {
                 />
               </svg>
               `;
-        rowProduct.append(containerProduct);
-        total = total + parseInt(product.quantity * product.precio.slice(1));
-        totalOfProducts = totalOfProducts + product.quantity;
-    });
+    rowProduct.append(containerProduct);
+    total = total + parseInt(product.quantity * product.precio.slice(1));
+    totalOfProducts = totalOfProducts + product.quantity;
+  });
 
-    valorTotal.innerText = `$${total}`;
-    countProducts.innerText = totalOfProducts;
+  valorTotal.innerText = `$${total}`;
+  countProducts.innerText = totalOfProducts;
 }
 
-const finalizarOrden = document.getElementById('finalizarOrden');
-
-  // Agrega un evento de clic al botón
-  finalizarOrden.addEventListener('click', () => {
-    // Muestra la SweetAlert2 al hacer clic en el botón
-    Swal.fire({
-      title: "Muchas gracias por su compra",
-      text: "Le llegara un correo con su recibo",
-      imageUrl: "./img/logo3.jpg",
-      imageWidth: 350,
-      imageHeight: 160,
-      imageAlt: "logo"
-    });;
+const finalizarOrden = document.getElementById("finalizarOrden");
+finalizarOrden.addEventListener("click", () => {
+  Swal.fire({
+    title: "Muchas gracias por su compra",
+    text: "Le llegara un correo con su recibo",
+    imageUrl: "./img/logo3.jpg",
+    imageWidth: 350,
+    imageHeight: 160,
+    imageAlt: "logo",
   });
+});
