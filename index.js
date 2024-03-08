@@ -1,4 +1,4 @@
-//
+
 const btnCart = document.querySelector(".container-cart-icon");
 const containerCartProducts = document.querySelector(
   ".container-cart-products"
@@ -94,8 +94,10 @@ function showHTML() {
 
   valorTotal.innerText = `$${total}`;
   countProducts.innerText = totalOfProducts;
+  localStorage.setItem("carrito", JSON.stringify(allProducts));
 }
 
+// USO DE LIBRERIA
 const finalizarOrden = document.getElementById("finalizarOrden");
 finalizarOrden.addEventListener("click", () => {
   Swal.fire({
@@ -107,3 +109,7 @@ finalizarOrden.addEventListener("click", () => {
     imageAlt: "logo",
   });
 });
+
+
+
+

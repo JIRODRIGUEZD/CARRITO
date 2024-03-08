@@ -1,0 +1,47 @@
+
+{
+    {   id: 1;
+        title: "Mystica Pro" ;
+        precio: 300 ;
+    }
+    {   id: 2;
+        title: "Mystica III" ;
+        precio: 260 ;
+    }
+    {
+        id: 3;
+        title: "Smok X-Priv" ;
+        precio: 850;
+    }
+    {
+        id: 4;
+        title: "Airis Vertex" ;
+        precio: 109 ;
+    }
+    {
+        id: 5;
+        title: "Vapcell V30" ;
+        precio: 129;
+    }
+    {
+        id: 6;
+        title: "Vapcell V28" ;
+        precio: 39;
+    }
+    {
+        id: 7;
+        title: "Samsung 35E" ;
+        precio: 139 ;
+    }
+    {
+        id:8;
+        title: "Airis Quaser" ;
+        precio: 199;
+    }
+    {
+        id: 9;
+        title: "Airis Drip";
+        precio: 109 ;
+    }
+}
+*/
